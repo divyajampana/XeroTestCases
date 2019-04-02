@@ -307,8 +307,10 @@ public class AutomationScripts extends Module{
 		
 		WebElement help = findElement(By.xpath("//button[@title='Help']//*[@class='xrh-icon xrh-icon-svg']"), "Help");
 		clickObject(help, "Help");
-		WebElement msg2 = findElement(By.xpath("//input[@placeholder='What do you need help with?']"), "message");
-		logger.log(LogStatus.PASS, msg2.getText()+" is displayed");
+		Thread.sleep(3000);
+		WebElement msg2 = findElement(By.xpath("//input[@id='menu_help']"), "message");
+		logger.log(LogStatus.PASS, msg2.getAttribute("placeholder")+" is displayed");
+		
 		Thread.sleep(5000);
 		
 		
